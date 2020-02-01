@@ -38,7 +38,10 @@ function displayWord() {
 }
 
 function showNotificaiton() {
-  console.log('notify');
+  notification.classList.add('show')
+  setTimeout(() => {
+    notification.classList.remove('show')
+  }, 3000)
 }
 
 function upDateWrong() {
