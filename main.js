@@ -37,4 +37,37 @@ function displayWord() {
 
 }
 
+function showNotificaiton() {
+  console.log('notify');
+}
+
+function upDateWrong() {
+  console.log('upDateWrong');
+}
+
 displayWord()
+
+// listen to keydown events 
+window.addEventListener('keydown', e => {
+  // check if user press a-z
+  if (e.keyCode >= 65 && e.keyCode <= 90) {
+    const letter = e.key
+
+    if (selectedWord.includes(letter)) {
+      if (!correctLetters.includes(letter)) {
+        correctLetters.push(letter)
+        displayWord()
+      } else {
+        //show notification
+        showNotificaiton()
+      }
+    } else {
+      if (!wrongLetters.includes(letter)) {
+        wrongLetters.push(letter)
+        //updated wrong letters
+        console.log(wrongLetters);
+        upDateWrong()
+      }
+    }
+  }
+})
