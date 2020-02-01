@@ -44,8 +44,26 @@ function showNotificaiton() {
   }, 3000)
 }
 
-function upDateWrong() {
-  console.log('upDateWrong');
+function upDateWrong(letter) {
+  wrongWordEl.innerHTML += `
+    <span>${letter} </span>
+  `;
+
+  // display parts
+  bodyParts.forEach((item, index) => {
+    const errors = wrongLetters.length
+    if (index < errors) {
+      item.style.display = 'block'
+    } else {
+      item.style.display = 'none'
+    }
+  })
+
+  // check if lost
+  if (wrongLetters.length === 6) {
+    finalMessage.innerText = 'Sorry! You lost! 😢';
+    popup.style.display = 'flex'
+  }
 }
 
 displayWord()
@@ -68,9 +86,35 @@ window.addEventListener('keydown', e => {
       if (!wrongLetters.includes(letter)) {
         wrongLetters.push(letter)
         //updated wrong letters
-        console.log(wrongLetters);
-        upDateWrong()
+        upDateWrong(letter)
+      } else {
+        showNotificaiton()
       }
     }
   }
 })
+
+// reset game and play again
+playAgainBtn.addEventListener('click', e => {
+
+  // empty Arrays
+  correctLetters.splice(0);
+  wrongLetters.splice(0);
+
+  // select a new word
+  selectedWord = words[Math.floor(Math.random() * words.length)]
+
+  // display words
+  displayWord()
+
+  // update wrong letters and clear the board
+  upDateWrong('')
+  wrongWordEl.innerHTML = `<h2>Wrong Letters</h2>`
+
+  // hide the popup
+  popup.style.display = 'none'
+})
+
+function playAgain() {
+
+}
