@@ -22,15 +22,42 @@
       <line x1="20" y1="230" x2="100" y2="230"></line>
 
       <!-- Head -->
-      <circle cx="140" cy="70" r="20"></circle>
+      <circle cx="140" cy="70" r="20" class="body-parts"></circle>
 
       <!-- Body -->
-      <line x1="140" y1="90" x2="140" y2="150"></line>
-      <line x1="140" y1="110" x2="170" y2="90"></line>
-      <line x1="140" y1="110" x2="110" y2="90"></line>
-      <line x1="140" y1="150" x2="170" y2="210"></line>
-      <line x1="140" y1="150" x2="110" y2="210"></line>
+      <line x1="140" y1="90" x2="140" y2="150" class="body-parts"></line>
+      <line x1="140" y1="110" x2="170" y2="90" class="body-parts"></line>
+      <line x1="140" y1="110" x2="110" y2="90" class="body-parts"></line>
+      <line x1="140" y1="150" x2="170" y2="210" class="body-parts"></line>
+      <line x1="140" y1="150" x2="110" y2="210" class="body-parts"></line>
     </svg>
+    <!-- container for wrong letters -->
+    <div class="wrong-letter-container">
+      <div class="wrong-letters"></div>
+      <h2>wrong</h2>
+      <span>x,y,t,a</span>
+    </div>
+    <!-- word display -->
+    <div class="word" id="word">
+      <div class="letter">h</div>
+      <div class="letter">e</div>
+      <div class="letter">l</div>
+      <div class="letter">l</div>
+      <div class="letter">o</div>
+    </div>
+  </div>
+
+  <!-- popup messages -->
+  <div class="popup-container" id="popup-container">
+    <div class="popup">
+      <h2 id="final-message">You have won</h2>
+      <button id="play-button">Play again</button>
+    </div>
+  </div>
+
+  <!-- notifications -->
+  <div class="notication-container" id="notication-container">
+    <p>You've alreay enter this letter</p>
   </div>
 </body>
 

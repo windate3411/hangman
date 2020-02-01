@@ -1,6 +1,6 @@
-/* * {
+* {
   box-sizing: border-box;
-} */
+}
 
 body {
   padding: 0;
@@ -14,4 +14,10 @@ body {
   stroke: white;
   stroke-width: 4px;
   stroke-linecap: round;
+}
+
+/* hide the body parts */
+
+.body-parts {
+  display: none;
 }
