@@ -1,0 +1,17 @@
+/* * {
+  box-sizing: border-box;
+} */
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #34495e;
+  color: #ffffff;
+}
+
+.img-container {
+  fill: transparent;
+  stroke: white;
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
